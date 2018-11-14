@@ -1,20 +1,15 @@
 <?php
-class Calculator
+class ParImpar
 {
  
-    public function add($a, $b)
+    public function esPar($a)
     {
-        return $a + $b;
+        return $a % 2 == 0;
+    }
+	
+	public function esImpar($a)
+    {
+        return $a % 2 == 1;
     }
 
-    public function multiply($a, $b)
-    {
-        return $a * $b;
-    }
-
-    public function division($a, $b)
-    {
-        return $a / $b;
-    }
- 
 }

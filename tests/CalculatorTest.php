@@ -2,36 +2,42 @@
 use PHPUnit\Framework\TestCase;
 require 'Calculator.php';
 
-class CalculatorTests extends TestCase
+class ParImparTests extends TestCase
 {
-    private $calculator;
+    private $parImpar;
  
     protected function setUp()
     {
-        $this->calculator = new Calculator();
+        $this->parImpar = new ParImpar();
     }
  
     protected function tearDown()
     {
-        $this->calculator = NULL;
+        $this->parImpar = NULL;
     }
  
-    public function testAdd()
+    public function testPar()
     {
-        $result = $this->calculator->add(1, 2);
-        $this->assertEquals(3, $result);
+        $result = $this->parImpar->esPar(2);
+        $this->assertEquals(true, $result);
     }
 
-    public function testMultiply()
+    public function testPar2()
     {
-        $result = $this->calculator->multiply(5, 2);
-        $this->assertEquals(10, $result);
+        $result = $this->parImpar->esPar(3);
+        $this->assertEquals(false, $result);
+    } 
+    
+	public function testImpar()
+    {
+        $result = $this->parImpar->esImpar(2);
+        $this->assertEquals(false, $result);
     }
 
-    public function testDivision()
+    public function testImpar2()
     {
-        $result = $this->calculator->division(10, 2);
-        $this->assertEquals(5, $result);
-    }
+        $result = $this->parImpar->esImpar(3);
+        $this->assertEquals(true, $result);
+    } 
  
 }
